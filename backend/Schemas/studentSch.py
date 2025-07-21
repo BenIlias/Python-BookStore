@@ -18,3 +18,6 @@ class StudentUpdate(BaseModel):
     username: str | None = None
     email: EmailStr | None = None
     password: str | None = None
+    
+    class Config:
+        orm_mode = True

@@ -16,4 +16,7 @@ class ManagerOut(ManagerBase):
 class ManagerUpdate(BaseModel):
     username: str | None = None
     email: EmailStr | None = None
-    hashed_password: str | None = None
+    password: str | None = None
+    
+    class Config:
+        orm_mode = True

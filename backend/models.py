@@ -19,8 +19,7 @@ class Student(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, index=True, unique=True, nullable=False)
     email = Column(String, nullable=False, index=True, unique=True)
-    hashed_password = Column(String, nullable=False
-)
+    hashed_password = Column(String, nullable=False)
     
     books = relationship('Book', back_populates='student')
     
