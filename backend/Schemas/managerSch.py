@@ -20,3 +20,8 @@ class ManagerUpdate(BaseModel):
     
     class Config:
         orm_mode = True
+        
+class ManagerLogin(BaseModel):
+    email: EmailStr 
+    password: str
+    

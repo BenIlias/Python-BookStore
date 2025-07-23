@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from .. import models, auth
-from backend.Schemas import studentSch, managerSch
+from backend.Schemas import studentSch
 
 
 def getStudentByID(db: Session, student_id):

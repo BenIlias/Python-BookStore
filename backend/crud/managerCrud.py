@@ -1,8 +1,11 @@
+from fastapi import Request
 from sqlalchemy.orm import Session
-from fastapi import Depends, Body
-from backend.Schemas import managerSch, studentSch
+from backend.Schemas import managerSch
 from .. import models, auth
 
+def get_manager_by_username(db: Session, username: str):
+    return db.query(models.Manager).filter(models.Manager.username == username).first()
+    
 
 def get_manager_by_id(db: Session, manager_id: int):
     return db.query(models.Manager).filter(models.Manager.id == manager_id).first()    
@@ -44,7 +47,6 @@ def updateManager(db: Session, manager: managerSch.ManagerUpdate, manager_id: in
     
     return manager_db
 
-
     
 def deleteManager(db: Session, email: str):
     manager_db = get_manager_by_email(db, email)
@@ -53,10 +55,5 @@ def deleteManager(db: Session, email: str):
     db.delete(manager_db)
     db.commit()
     
-    
     return manager_db
-    
-
-    
-    
     

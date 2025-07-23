@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from backend.crud import managerCrud, studentCrud
-from backend.Schemas import managerSch, studentSch
+from backend.crud import studentCrud
+from backend.Schemas import studentSch
 from ..database import get_db
 
 
